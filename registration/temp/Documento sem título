@@ -1,0 +1,30 @@
+{
+  "enrollment" : [ {
+    "price" : "250.00",
+    "productId" : "96F95A6A2323AE6BB4D69F9D6CE06A4F",
+    "title" : "Other"
+  }, {
+    "price" : "180.00",
+    "productId" : "BB575E3650503EE334E85F8A65626929",
+    "title" : "Undergraduate student"
+  }, {
+    "price" : "180.00",
+    "productId" : "BB575E3650503EE334E85F8A65626929",
+    "title" : "Master's student"
+  }, {
+    "price" : 180,
+    "productId" : "BB575E3650503EE334E85F8A65626929",
+    "title" : "PhD student"
+  }, {
+    "price" : "250.00",
+    "productId" : "96F95A6A2323AE6BB4D69F9D6CE06A4F",
+    "title" : "Post-doc"
+  }, {
+    "price" : "250.00",
+    "productId" : "96F95A6A2323AE6BB4D69F9D6CE06A4F",
+    "title" : "Professor"
+  } ],
+  "oralDeadline" : "May 13, 2017 23:59:59",
+  "posterDeadline" : "May 27, 2017 23:59:59",
+  "txt" : "Oral contributions last 10 minutes and must be given in english. <br/> Posters should be in english and sized <b>90cm x 120cm</b>"
+}

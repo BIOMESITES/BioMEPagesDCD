@@ -1,0 +1,27 @@
+siteip: 10.7.30.186
+
+ssh -i ppgbioinfo_rsa_biome_private imd@10.7.30.186
+
+usuario: imd
+palavra: IMDufrn2016$$
+
+
+DB_NAME: wpdb
+DB_USER: wpuser
+DB_PASSWORD: imdimd12#
+
+>>>>>>>>>>>>>>>>>>>>>>
+
+>fazer backup do mysql
+mysqldump -u wpuser -p wpdb > /home/imd/backups/backup_site_2017_04_24.sql
+
+>restaurar do backup
+mysql -u wpuser -p wpdb < /home/imd/backups/backup_site_aa_mm_dd.sql
+
+>>>>>>>>>>>>>>>>>>>>>>
+
+>fazer backup do site
+tar -vcf ~/backups/backup_site_ano_mes_dia.tar /var/www/html/.
+
+>restaurar
+tar -vxf ~/backups/backup_site_ano_mes_dia.tar
