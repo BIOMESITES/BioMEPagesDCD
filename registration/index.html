@@ -185,12 +185,12 @@
                     <div role="tabpanel" class="tab-pane active" id="register">
                         <form id="registerForm" class="form-signin" name="register">
                             <label for="inputEmail" class="sr-only">Email</label>
-                            <input type="email" id="inputEmailRegister" name="inputEmailRegister" class="form-control" placeholder="Email address" required autofocus="">
+                            <input type="email" id="inputEmailRegister" name="inputEmailRegister" class="form-control" placeholder="Email" required autofocus="">
                             <label for="inputPassword" class="sr-only">Senha</label>
-                            <input type="password" id="inputPasswordRegister" name="inputPasswordRegister" class="form-control" placeholder="Password" required>
+                            <input type="password" id="inputPasswordRegister" name="inputPasswordRegister" class="form-control" placeholder="Senha" required>
                             <small id="passwordHelp" class="form-text text-muted">A senha deve ter no mínimo 6 caracteres</small>
-		  <label for="confirmPassword" class="sr-only">Confirmar Senha</label>
-                            <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" required>
+		                    <label for="confirmPassword" class="sr-only">Confirmar Senha</label>
+                            <input type="password" id="confirmPassword" class="form-control" placeholder="Confirmar Senha" required>
                             <button id="registerBtn" class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar</button>
                         </form>
                     </div>
@@ -198,9 +198,9 @@
                     <div role="tabpanel" class="tab-pane" id="signin">
                         <form id="signInForm" class="form-signin" name="signin">
                             <label for="inputEmail" class="sr-only">Email</label>
-                            <input type="email" id="inputEmailSignIn" name="inputEmailSignIn" class="form-control" placeholder="Email address" required autofocus>
+                            <input type="email" id="inputEmailSignIn" name="inputEmailSignIn" class="form-control" placeholder="Email" required autofocus>
                             <label for="inputPassword" class="sr-only">Senha</label>
-                            <input type="password" id="inputPasswordSignIn" name="inputPasswordSignIn" class="form-control" placeholder="Password" required>
+                            <input type="password" id="inputPasswordSignIn" name="inputPasswordSignIn" class="form-control" placeholder="Senha" required>
                             <button id="signinBtn" class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
                         </form>
                     </div>
@@ -208,7 +208,7 @@
                     <div role="tabpanel" class="tab-pane" id="reset">
                         <form id="signInForm" class="form-signin" name="reset">
                             <label for="inputEmail" class="sr-only">Email</label>
-                            <input type="email" id="inputEmailReset" name="inputEmailReset" class="form-control" placeholder="Email address" required autofocus>
+                            <input type="email" id="inputEmailReset" name="inputEmailReset" class="form-control" placeholder="Email" required autofocus>
                             <button id="resetBtn" class="btn btn-lg btn-primary btn-block" type="submit">Solicitar Alteração</button>
                         </form>
                     </div>
@@ -227,10 +227,10 @@
                 <!-- Nav tabs -->
                 <ul id="signed-tab" class="nav nav-tabs nav-justified" role="tablist" style="padding-bottom:0px; margin: 0 auto 0 0;">
                     <!--<li role="presentation" class="active"><a href="#info" aria-controls="info" role="tab" data-toggle="tab"><h4>General Info</h4></a></li>-->
-                    <li role="presentation" class="active"><a href="#data" aria-controls="data" role="tab" data-toggle="tab"><h4>Data</h4></a></li>
+                    <li role="presentation" class="active"><a href="#data" aria-controls="data" role="tab" data-toggle="tab"><h4>Dados</h4></a></li>
                    <!-- <li role="presentation" id="abstractTab"><a href="#abstract" aria-controls="abstract" role="tab" data-toggle="tab"><h4>Abstract</h4></a></li>-->
-                    <li role="presentation"><a href="#payment" aria-controls="payment" role="tab" data-toggle="tab"><h4>Payment</h4></a></li>
-                    <li role="presentation" id="logOutTab"><a href="#" aria-controls="logout" role="tab" data-toggle="tab"><h4>Log out</h4></a></li>
+                    <li role="presentation"><a href="#payment" aria-controls="payment" role="tab" data-toggle="tab"><h4>Pagamento</h4></a></li>
+                    <li role="presentation" id="logOutTab"><a href="#" aria-controls="logout" role="tab" data-toggle="tab"><h4>Sair</h4></a></li>
                     <!--<button id="logOutBtn" class="btn btn-danger pull-right" style="margin-top: 12px">Log Out</button>-->
                 </ul>
             </div>
@@ -238,10 +238,10 @@
 
         <div class="row info-row">
             <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
-                <div class="alert alert-warning" role="alert"><strong>Warning:</strong> Pending payment</div>
-                <div id="update-success" class="alert alert-success" role="alert">Information updated successfully</div>
-                <div id="payment-success" class="alert alert-success" role="alert">Payment confirmed!</div>
-                <div class="alert alert-danger" role="alert"><strong>Error:</strong> Something went wrong</div>
+                <div class="alert alert-warning" role="alert"><strong>Warning:</strong> Pagamento Pendente</div>
+                <div id="update-success" class="alert alert-success" role="alert">Informação atualizada com sucesso!</div>
+                <div id="payment-success" class="alert alert-success" role="alert">Pagamento confirmado!</div>
+                <div class="alert alert-danger" role="alert"><strong>Error:</strong> Algo deu errado!</div>
             </div>
         </div>
 
@@ -315,24 +315,24 @@ Deixe espaço para preenchimentos de nome do curso, instituição e departamento
                                 </select>
                             </div>
 
-                             <div class="form-group">
+                             <div class="form-group non-professional">
                                 <label for="inputInstitution">Instituição</label>
                                 <input type="text" class="form-control" id="inputInstitution" placeholder="Informe sua instituição de ensino">
                             </div>
-                            <div class="col-md-6 form-group">
+                            <div class="col-md-6 form-group non-professional">
                                 <label for="inputCourse">Curso</label>
                                 <input type="text" class="form-control" id="inputCourse" placeholder="Informe seu curso">
                             </div>
-                            <div class="col-md-6 form-group">
+                            <div class="col-md-6 form-group non-professional">
                                 <label for="inputDepartment">Departamento</label>
                                 <input type="text" class="form-control" id="inputDepartment" placeholder="Informe seu departamento">
                             </div>
 
-                            <div class="col-md-6 form-group">
+                            <div class="col-md-6 form-group professional">
                                 <label for="inputCompany">Empresa</label>
                                 <input type="text" class="form-control" id="inputCompany" placeholder="Informe o nome da sua empresa">
                             </div>
-                            <div class="col-md-6 form-group">
+                            <div class="col-md-6 form-group professional">
                                 <label for="inputOffice">Cargo</label>
                                 <input type="text" class="form-control" id="inputOffice" placeholder="Informe seu cargo na empresa">
                             </div>
@@ -622,8 +622,9 @@ Deixe espaço para preenchimentos de nome do curso, instituição e departamento
             $('#data-form #inputName').val(snapshot.name);
             $('#data-form #inputInstitution').val(snapshot.institution);
             $('#data-form #inputOccupation').val(snapshot.occupation);
-            $('#data-form #inputOral').prop('checked', snapshot.oral);
-            $('#data-form #inputPoster').prop('checked', snapshot.poster);
+            $('#data-form #inputNGS').prop('checked', snapshot.ngs);
+            $('#data-form #inputFilogenia').prop('checked', snapshot.filogenia);
+            $('#data-form #inputProteomica').prop('checked', snapshot.proteomica);
 
             $('#data-form #inputState option[value="' + snapshot.state + '"]').prop('selected', true);
             $('#data-form #inputUF option[value="' + snapshot.uf + '"]').prop('selected', true);
@@ -634,10 +635,34 @@ Deixe espaço para preenchimentos de nome do curso, instituição e departamento
             });
 
             firebase.database().ref('info/enrollment/' + snapshot.enrollment).once('value').then(function(enrollmentSnapshot) {
+                if(enrollmentSnapshot.professional){
+                    $('.non-professional').hide();
+                    $('.professional').show();
+                } else{
+                    $('.non-professional').show();
+                    $('.professional').hide();
+                }
                 $('#psForm #description').text(enrollmentSnapshot.val().title);
-                $('#psForm #fee').text(enrollmentSnapshot.val().price);
-                $('#psForm #productId').val(enrollmentSnapshot.val().productId);
             });
+
+            if(snapshot.ngs == true){            
+                console.log('info/enrollment_course/ngs/' + snapshot.enrollment);    
+                firebase.database().ref('info/enrollment_course/ngs/' + snapshot.enrollment).once('value').then(function(enrollmentCourseSnapshot) {
+                    console.log(enrollmentCourseSnapshot);
+                $('#psForm #fee').text(enrollmentCourseSnapshot.val().price);
+                $('#psForm #productId').val(enrollmentCourseSnapshot.val().productId);
+            });
+            }if(snapshot.filogenia == true){
+               firebase.database().ref('info/enrollment_course/filogenia/' + snapshot.enrollment).once('value').then(function(enrollmentCourseSnapshot) {
+                $('#psForm #fee').text(enrollmentCourseSnapshot.val().price);
+                $('#psForm #productId').val(enrollmentCourseSnapshot.val().productId);
+            }); 
+            }if(snapshot.proteomica == true){
+               firebase.database().ref('info/enrollment_course/proteomica/' + snapshot.enrollment).once('value').then(function(enrollmentCourseSnapshot) {
+                $('#psForm #fee').text(enrollmentCourseSnapshot.val().price);
+                $('#psForm #productId').val(enrollmentCourseSnapshot.val().productId);
+            }); 
+            }
 
         }
 
