@@ -157,6 +157,9 @@
     li[role="presentation"] a {
         width: 100%;
     }
+    .professional, .non-professional{
+        display: none;
+    }
   </style>
   </head>
 
@@ -341,6 +344,7 @@
                                 <button type="submit" class="btn btn-primary pull-right">Submit</button>
                             </fieldset>
                         </form>
+
                     </div>
 
                     <!-- tab pane 3 -->
@@ -393,6 +397,7 @@
                         Clique na imagem a seguir para ser redirecionado para a página de pagamento do PagSeguro.
                         O status do pagamento será atualizado assim que for notificado.
                         </p>
+                        <!--
                         <form id="psForm" action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post">
                             <p id="description"></p>
                             <span>Taxa de inscrição: R$</span>
@@ -402,6 +407,24 @@
                             <input type="hidden" name="iot" value="button" />
                             <input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-comprar-preto-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
                         </form>
+                        -->
+                        <form id="psForm" target="pagseguro" method="post" action="https://pagseguro.uol.com.br/checkout/checkout.jhtml">
+                          <input type="hidden" name="email_cobranca" value="imparatodanilo@gmail.com">
+                          <input type="hidden" name="tipo" value="CP">
+                          <input type="hidden" name="moeda" value="BRL">
+
+                          <div id="cart">
+                          <!--
+                              <input type="hidden" name="item_id_1" value="12345">
+                              <input type="hidden" name="item_descr_1" value="Descrição do item a ser vendido">
+                              <input type="hidden" name="item_quant_1" value="1">
+                              <input type="hidden" name="item_valor_1" value="100">
+                          -->
+                          </div>
+
+                          <input type="image" src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/pagamentos/99x61-pagar-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!">
+                        </form>
+
                     </div>
                 </div>
             </div>
@@ -500,19 +523,24 @@
         $('#registerBtn').click(function(){
             var email = $('#inputEmailRegister').val();
             var password = $('#inputPasswordRegister').val();
-            firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-                console.log(error.message);
-		        alert(error.message);
-            });
+            var confirmPassword = $('#confirmPassword').val();
+            if(password == confirmPassword){
+                firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+                    console.log(error.message);
+    		        alert(error.message);
+                });
+            } else {
+                alert("Senhas não conferem");
+            }
         });
 
         $('#signinBtn').click(function(){
             var email = $('#inputEmailSignIn').val();
             var password = $('#inputPasswordSignIn').val();
             firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-                console.log(error.message);
-                alert(error.message);
-            });
+            console.log(error.message);
+            alert(error.message);
+                });
         });
 
         $('#resetBtn').click(function(){
@@ -632,20 +660,44 @@
                 $('#psForm #description').text(enrollmentSnapshot.val().title);
             });
 
+            $('#cart').html('');
+
+            var itemCount = 1;
             if(snapshot.ngs){
                 firebase.database().ref('info/enrollment_course/ngs/' + snapshot.enrollment).once('value').then(function(enrollmentCourseSnapshot) {
                     $('#psForm #fee').text(enrollmentCourseSnapshot.val().price);
-                    $('#psForm #productId').val(enrollmentCourseSnapshot.val().productId);
+                    //$('#psForm #productId').val(enrollmentCourseSnapshot.val().productID);
+                    $('#cart').append(
+                        '<input type="hidden" name="item_id_'+itemCount+'" value="1">' +
+                        '<input type="hidden" name="item_descr_'+itemCount+'" value="Análise de Dados de Sequenciadores de Segunda Geração">' +
+                        '<input type="hidden" name="item_quant_'+itemCount+'" value="1">' +
+                        '<input type="hidden" name="item_valor_'+itemCount+'" value="'+enrollmentCourseSnapshot.val().price+'">'
+                    );
+                    itemCount++;
                 });
             }if(snapshot.proteomica){
                 firebase.database().ref('info/enrollment_course/proteomica/' + snapshot.enrollment).once('value').then(function(enrollmentCourseSnapshot) {
                     $('#psForm #fee').text(enrollmentCourseSnapshot.val().price);
-                    $('#psForm #productId').val(enrollmentCourseSnapshot.val().productId);
+                    //$('#psForm #productId').val(enrollmentCourseSnapshot.val().productID);
+                     $('#cart').append(
+                        '<input type="hidden" name="item_id_'+itemCount+'" value="2">' +
+                        '<input type="hidden" name="item_descr_'+itemCount+'" value="Análise proteômica - conceitos e aplicações">' +
+                        '<input type="hidden" name="item_quant_'+itemCount+'" value="1">' +
+                        '<input type="hidden" name="item_valor_'+itemCount+'" value="'+enrollmentCourseSnapshot.val().price+'">'
+                    );
+                    itemCount++;
                 });
             }if(snapshot.filogenia){
                 firebase.database().ref('info/enrollment_course/filogenia/' + snapshot.enrollment).once('value').then(function(enrollmentCourseSnapshot) {
                     $('#psForm #fee').text(enrollmentCourseSnapshot.val().price);
-                    $('#psForm #productId').val(enrollmentCourseSnapshot.val().productId);
+                    //$('#psForm #productId').val(enrollmentCourseSnapshot.val().productID);
+                     $('#cart').append(
+                        '<input type="hidden" name="item_id_'+itemCount+'" value="3">' +
+                        '<input type="hidden" name="item_descr_'+itemCount+'" value="Filogenia Molecular e Análise Evolucionária de Sequências">' +
+                        '<input type="hidden" name="item_quant_'+itemCount+'" value="1">' +
+                        '<input type="hidden" name="item_valor_'+itemCount+'" value="'+enrollmentCourseSnapshot.val().price+'">'
+                    );
+                    itemCount++;
                 });
             }
 
