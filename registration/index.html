@@ -14,7 +14,7 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 
-  <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
+  <link rel="shortcut icon" type="image/png" href="images/logos/back2.png"/>
   <style>
     body {
     padding-top: 40px;
@@ -164,7 +164,7 @@
 
     <div class="container">
         <!--<a href="../">-->
-            <img class="logo" src="icbp.png"/>
+            <img class="logo" src="images/logos/back2.png"/>
         <!--</a>-->
     </div>
 
@@ -174,7 +174,7 @@
 
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs form-signin no-padding nav-justified" role="tablist" style="padding-bottom:0px;">
-                    <li role="presentation" class="active"><a href="#register" aria-controls="home" role="tab" data-toggle="tab"><h4>Inscrição</h4></a></li>
+                    <li role="presentation" class="active"><a href="#register" aria-controls="home" role="tab" data-toggle="tab"><h4>Cadastro</h4></a></li>
                     <li role="presentation"><a href="#signin" aria-controls="signin" role="tab" data-toggle="tab"><h4>Login</h4></a></li>
                     <li role="presentation"><a href="#reset" aria-controls="reset" role="tab" data-toggle="tab"><h4>Alterar Senha</h4></a></li>
                 </ul>
@@ -266,26 +266,6 @@
                     -->
 
 
-
-
-<!--
-
-Bianca
-
-O conteúdo será distribuído pelos 5 períodos, ou seja, cada curso terá duração de 2,5 dias. Vou pedir aos professores que subdividam o conteúdo programático para vc poder fazer o programa.
-
-As categorias são:
-Alunos de graduação
-Alunos de pós-graduação
-Pós-doutorandos
-Profissionais
-
-Deixe espaço para preenchimentos de nome do curso, instituição e departamento para os 3 primeiros. Para profissionais, nome da empresa e cargo ocupado. E para todos eles solicite telefone de contato, cidade/estado e e-mail.
-
--->
-
-
-
                     <!-- tab pane 2 -->
                     <div role="tabpanel" class="tab-pane active" id="data">
                         <form id="data-form">
@@ -337,7 +317,7 @@ Deixe espaço para preenchimentos de nome do curso, instituição e departamento
                                 <input type="text" class="form-control" id="inputOffice" placeholder="Informe seu cargo na empresa">
                             </div>
 
-                            <label>PRO FAVOR, INFORME EM QUAL(IS) CURSO(S) VOCÊ ESTÁ SE INSCREVENDO</label>
+                            <label>POR FAVOR, CONFIRME SUA INSCRIÇÃO NO CURSO </label>
                             <div class="form-check">
                                 <label class="form-check-label">
                                 <input id="inputNGS" type="checkbox" class="form-check-input">
@@ -423,11 +403,8 @@ Deixe espaço para preenchimentos de nome do curso, instituição e departamento
                             <input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-comprar-preto-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
                         </form>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
     </div>
 
@@ -476,6 +453,7 @@ Deixe espaço para preenchimentos de nome do curso, instituição e departamento
             var institution = $(this).find('#inputInstitution').val();
             var department = $(this).find('#inputDepartment').val();
             var company = $(this).find('#inputCompany').val();
+            var office = $(this).find('#inputOffice').val();
 
             var statte = $(this).find('#inputState').val();
             var uf = $(this).find('#inputUF').val();
@@ -486,7 +464,13 @@ Deixe espaço para preenchimentos de nome do curso, instituição e departamento
 
             setUserData({
                 name: name,
+                phone: phone,
+                city: city,
+                course: course,
                 institution: institution,
+                department: department,
+                company: company,
+                office: office,
                 uf: uf,
                 enrollment: enrollment,
                 ngs: ngs,
@@ -620,22 +604,25 @@ Deixe espaço para preenchimentos de nome do curso, instituição e departamento
         function updateProfileFields(snapshot){
             //user profile
             $('#data-form #inputName').val(snapshot.name);
+            $('#data-form #inputPhone').val(snapshot.phone);
+            $('#data-form #inputCity').val(snapshot.city);
+            $('#data-form #inputCourse').val(snapshot.course);
             $('#data-form #inputInstitution').val(snapshot.institution);
-            $('#data-form #inputOccupation').val(snapshot.occupation);
+            $('#data-form #inputDepartment').val(snapshot.department);
+            $('#data-form #inputCompany').val(snapshot.company);
+
             $('#data-form #inputNGS').prop('checked', snapshot.ngs);
-            $('#data-form #inputFilogenia').prop('checked', snapshot.filogenia);
             $('#data-form #inputProteomica').prop('checked', snapshot.proteomica);
+            $('#data-form #inputFilogenia').prop('checked', snapshot.filogenia);
 
             $('#data-form #inputState option[value="' + snapshot.state + '"]').prop('selected', true);
             $('#data-form #inputUF option[value="' + snapshot.uf + '"]').prop('selected', true);
-            $('#data-form #inputEnrollment option[value="' + snapshot.enrollment + '"]').prop('selected', true);
 
-            firebase.database().ref('info/uf/' + snapshot.uf).once('value').then(function(ufSnapshot) {
-                $('#psForm #description').text(ufSnapshot.val().title);
-            });
+            $('#data-form #inputEnrollment option[value="' + snapshot.enrollment + '"]').prop('selected', true);
+            $('#data-form #inputUF option[value="' + snapshot.uf + '"]').prop('selected', true);
 
             firebase.database().ref('info/enrollment/' + snapshot.enrollment).once('value').then(function(enrollmentSnapshot) {
-                if(enrollmentSnapshot.professional){
+                if(enrollmentSnapshot.val().professional){
                     $('.non-professional').hide();
                     $('.professional').show();
                 } else{
@@ -645,23 +632,21 @@ Deixe espaço para preenchimentos de nome do curso, instituição e departamento
                 $('#psForm #description').text(enrollmentSnapshot.val().title);
             });
 
-            if(snapshot.ngs == true){            
-                console.log('info/enrollment_course/ngs/' + snapshot.enrollment);    
+            if(snapshot.ngs){
                 firebase.database().ref('info/enrollment_course/ngs/' + snapshot.enrollment).once('value').then(function(enrollmentCourseSnapshot) {
-                    console.log(enrollmentCourseSnapshot);
-                $('#psForm #fee').text(enrollmentCourseSnapshot.val().price);
-                $('#psForm #productId').val(enrollmentCourseSnapshot.val().productId);
-            });
-            }if(snapshot.filogenia == true){
-               firebase.database().ref('info/enrollment_course/filogenia/' + snapshot.enrollment).once('value').then(function(enrollmentCourseSnapshot) {
-                $('#psForm #fee').text(enrollmentCourseSnapshot.val().price);
-                $('#psForm #productId').val(enrollmentCourseSnapshot.val().productId);
-            }); 
-            }if(snapshot.proteomica == true){
-               firebase.database().ref('info/enrollment_course/proteomica/' + snapshot.enrollment).once('value').then(function(enrollmentCourseSnapshot) {
-                $('#psForm #fee').text(enrollmentCourseSnapshot.val().price);
-                $('#psForm #productId').val(enrollmentCourseSnapshot.val().productId);
-            }); 
+                    $('#psForm #fee').text(enrollmentCourseSnapshot.val().price);
+                    $('#psForm #productId').val(enrollmentCourseSnapshot.val().productId);
+                });
+            }if(snapshot.proteomica){
+                firebase.database().ref('info/enrollment_course/proteomica/' + snapshot.enrollment).once('value').then(function(enrollmentCourseSnapshot) {
+                    $('#psForm #fee').text(enrollmentCourseSnapshot.val().price);
+                    $('#psForm #productId').val(enrollmentCourseSnapshot.val().productId);
+                });
+            }if(snapshot.filogenia){
+                firebase.database().ref('info/enrollment_course/filogenia/' + snapshot.enrollment).once('value').then(function(enrollmentCourseSnapshot) {
+                    $('#psForm #fee').text(enrollmentCourseSnapshot.val().price);
+                    $('#psForm #productId').val(enrollmentCourseSnapshot.val().productId);
+                });
             }
 
         }
@@ -738,16 +723,28 @@ Deixe espaço para preenchimentos de nome do curso, instituição e departamento
 
             $('#db-info').html(info.txt);
 
-            $.each(info.state, function(index, value) {
-                $('#inputState').append($("<option />").val(index).text(value.title));
-            });
+            // $.each(info.state, function(index, value) {
+            //     $('#inputState').append($("<option />").val(index).text(value.title));
+            // });
 
-             $.each(info.uf, function(index, value) {
+            $.each(info.uf, function(index, value) {
                 $('#inputUF').append($("<option />").val(index).text(value.title));
             });
 
             $.each(info.enrollment, function(index, value) {
-                $('#inputEnrollment').append($("<option />").val(index).text(value.title));
+                $('#inputEnrollment').append($("<option />").data('professional',value.professional).val(index).text(value.title));
+            });
+
+            $('#inputEnrollment').change(function(){
+                var isProfessional = $(this).find(':selected').data('professional');
+                if(isProfessional){
+                    console.log('is prof');
+                    $('.non-professional').hide();
+                    $('.professional').show();
+                } else {
+                    $('.non-professional').show();
+                    $('.professional').hide();
+                }
             });
 
             // Poster Countdown

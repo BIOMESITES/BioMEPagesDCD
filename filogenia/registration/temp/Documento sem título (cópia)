@@ -1,0 +1,125 @@
+Filogenia:
+
+{
+  "enrollment" : [ 
+  {
+    "price" : "180.00",
+    "productId" : "97DFF6022626E94FF45CAFB73BCBDC7D",
+    "title" : "Aluno de graduação"
+  }, {
+    "price" : "180.00",
+    "productId" : "97DFF6022626E94FF45CAFB73BCBDC7D",
+    "title" : "Aluno de pós-graduação"
+  }, {
+    "price" : "180.00",
+    "productId" : "97DFF6022626E94FF45CAFB73BCBDC7D",
+    "title" : "Pós-doutorando"
+  }, {
+    "price" : "180.00",
+    "productId" : "97DFF6022626E94FF45CAFB73BCBDC7D",
+    "title" : "Profissional"
+  } 
+ ]
+}
+
+NGS:
+
+{
+  "enrollment" : [ 
+  {
+    "price" : "300.00",
+    "productId" : "F5DAD6912E2E6A5994AC9FA651E87752",
+    "title" : "Aluno de graduação"
+  }, {
+    "price" : "300.00",
+    "productId" : "F5DAD6912E2E6A5994AC9FA651E87752",
+    "title" : "Aluno de pós-graduação"
+  }, {
+    "price" : "300.00",
+    "productId" : "F5DAD6912E2E6A5994AC9FA651E87752",
+    "title" : "Pós-doutorando"
+  }, {
+    "price" : "300.00",
+    "productId" : "F5DAD6912E2E6A5994AC9FA651E87752",
+    "title" : "Profissional"
+  } 
+ ]
+}
+
+Proteômica:
+
+{
+  "enrollment" : [ 
+  {
+    "price" : "150.00",
+    "productId" : "3320E6A617172B2554262F81BA93AA47",
+    "title" : "Aluno de graduação"
+  }, {
+    "price" : "150.00",
+    "productId" : "3320E6A617172B2554262F81BA93AA47",
+    "title" : "Aluno de pós-graduação"
+  }, {
+    "price" : "250.00",
+    "productId" : "418C94D15E5EBF111480EF8C9ACBBADB",
+    "title" : "Pós-doutorando"
+  }, {
+    "price" : "250.00",
+    "productId" : "418C94D15E5EBF111480EF8C9ACBBADB",
+    "title" : "Profissional"
+  } 
+ ]
+}
+
+
+
+
+
+
+
+
+
+Filogenia:
+
+<!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+<form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post">
+<!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+<input type="hidden" name="code" value="97DFF6022626E94FF45CAFB73BCBDC7D" />
+<input type="hidden" name="iot" value="button" />
+<input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-pagar-laranja-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+</form>
+<!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
+<br><br>
+
+Introdução NGS:
+
+<!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+<form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post">
+<!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+<input type="hidden" name="code" value="F5DAD6912E2E6A5994AC9FA651E87752" />
+<input type="hidden" name="iot" value="button" />
+<input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-pagar-laranja-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+</form>
+<!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
+
+
+Proteômica Graduação:
+ 
+<!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+<form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post">
+<!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+<input type="hidden" name="code" value="3320E6A617172B2554262F81BA93AA47" />
+<input type="hidden" name="iot" value="button" />
+<input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-comprar-laranja-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+</form>
+<!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
+
+Proteômica profissionais:
+<h>Proteomica.p</h>
+<!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+<form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post">
+<!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+<input type="hidden" name="code" value="418C94D15E5EBF111480EF8C9ACBBADB" />
+<input type="hidden" name="iot" value="button" />
+<input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-comprar-laranja-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+</form>
+<!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
