@@ -6,7 +6,16 @@
     <meta charset="utf-8">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="css/mine/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/mine/fix.css" type="text/css" />
+    <link rel="stylesheet" href="css/swiper.css" type="text/css" />
+    <link rel="stylesheet" href="css/dark.css" type="text/css" />
+    <link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+    <link rel="stylesheet" href="css/responsive.css" type="text/css" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -14,7 +23,7 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 
-  <link rel="shortcut icon" type="image/png" href="images/logos/back2.png"/>
+  <link rel="shortcut icon" type="image/png" href="images/logos/logocursos.png"/>
   <style>
     body {
     padding-top: 40px;
@@ -66,7 +75,8 @@
     img.logo {
         display: block;
         margin: auto;
-        width: 300px;
+        width: 750px;
+        height: : 750px;
         margin-bottom: 20px;
     }
     .tab-content form-signin {
@@ -167,7 +177,24 @@
 
     <div class="container">
         <!--<a href="../">-->
-            <img class="logo" src="images/logos/back2.png"/>
+            <img class="logo" src="images/logos/logocursos.png"/>
+
+       <!-- <section id="page-title" class="page-title-parallax page-title-dark" style="padding: 150px 0; background-image: url('images/landing/back2.png'); background-size: cover; background-position: center center;" data-stellar-background-ratio="0.4">
+
+                <div class="dark">
+                    <div class="slider-caption slider-caption-center">
+                        <h2 id="firebase-eventInfo-title" data-caption-animate="fadeInUp" style="font-weight: 400;">Cursos de curta duração 2017</h2>
+                        <div id="col" class="team-container center" style="margin-top: 75px">
+                            <div>
+                                <p style="font-size: 40px; font-weight: 700;">BioME - Centro Multiusuário de Bioinformática - UFRN</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        </section>--><!-- #page-title end -->
+        <br><br>
+
         <!--</a>-->
     </div>
 
@@ -320,7 +347,7 @@
                                 <input type="text" class="form-control" id="inputOffice" placeholder="Informe seu cargo na empresa">
                             </div>
 
-                            <label>POR FAVOR, CONFIRME SUA INSCRIÇÃO NO CURSO </label>
+                            <label>POR FAVOR, CONFIRME SUA INSCRIÇÃO NO(S) CURSO(S) </label>
                             <div class="form-check">
                                 <label class="form-check-label">
                                 <input id="inputNGS" type="checkbox" class="form-check-input">
@@ -345,7 +372,19 @@
                             </fieldset>
                         </form>
 
+                        <center><br><br>
+                                <div style="width: 82%; border-style: dotted; padding: 15px;">
+                                        <label>Inscreva-se também nos demais cursos de curta duração oferecidos pelo BioME</label><br><br>
+                                        <a style="color: #333;" href="http://bioinfo.imd.ufrn.br/cursosdcd/filogenia/index.html">Filogenia Molecular e Análise Evolucionária de Sequências </a><br><br>
+                                        <a style="color: #333;" href="http://bioinfo.imd.ufrn.br/cursosdcd/ngs/index.html"> Análise de Dados de Sequenciadores de Segunda Geração </a><br><br>
+                                        <p style="color: #FF6347; font-size: 17px;" >Inscritos em dois ou três cursos de curta duração de 2017, receberão um <b>voucher de 20%</b> para eventos futuros do BioME. <br>
+                                        (O voucher será enviado para o email cadastrado após conferência dos dados de inscrição)
+                                        </p>
+                                </div>
+                               </center>
+
                     </div>
+
 
                     <!-- tab pane 3 -->
                     <!--
@@ -409,7 +448,7 @@
                         </form>
                         -->
                         <form id="psForm" target="pagseguro" method="post" action="https://pagseguro.uol.com.br/checkout/checkout.jhtml">
-                          <input type="hidden" name="email_cobranca" value="imparatodanilo@gmail.com">
+                          <input type="hidden" name="email_cobranca" value="pagseguro@i2bio.org">
                           <input type="hidden" name="tipo" value="CP">
                           <input type="hidden" name="moeda" value="BRL">
 
@@ -433,7 +472,7 @@
 
     <div class="container">
         <a href="http://bioinfo.imd.ufrn.br/outreach/events/">
-        <p style="margin-top:50px; text-align: center">Voltar para a página inicial</p>
+        <p style="margin-top:50px; text-align: center; color: #FF6347;">Voltar para a página inicial</p>
         </a>
     </div>
 
@@ -546,7 +585,7 @@
         $('#resetBtn').click(function(){
             var email = $('#inputEmailReset').val();
             firebase.auth().sendPasswordResetEmail(email).then(function() {
-                alert("Password reset email sent.");
+                alert("E-mail de redefinição de senha enviadoPassword reset email sent.");
             }, function(error) {
                 alert(error);
             });
@@ -557,7 +596,7 @@
         });
 
         $('#logOutTab').click(function(){
-            if (confirm("You are about to log out."))
+            if (confirm("Você está prestes a sair."))
                 firebase.auth().signOut();
         });
 
