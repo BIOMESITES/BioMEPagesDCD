@@ -65,7 +65,7 @@
     border-radius: 1px;
     /*box-shadow: 0px 3px 5px rgba(0,0,0,0.4);*/
     transition: all 0.25s ease;
-    box-shadow: 
+    box-shadow:
         0 2px 2px 0 rgba(0, 0, 0, 0.2),
         0 1px 5px 0 rgba(0, 0, 0, 0.2),
         0 4px 6px -2px rgba(0, 0, 0, 0.35);
@@ -127,6 +127,7 @@ span.institution {
 }
 #speakers .team-desc {
     padding: 10px 15px 10px 0;
+    text-align: justify;
 }
 #speakers .team-content {
     height: 75px;
@@ -244,5 +245,5 @@ body:not(.no-transition) #wrapper.transparent_class {
 }
 
 .clients-grid li:after, .testimonials-grid li:after {
-    border-bottom: 0px; 
+    border-bottom: 0px;
 }
