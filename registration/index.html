@@ -271,7 +271,7 @@
                 <div class="alert alert-warning" role="alert"><strong>Atenção:</strong> Pagamento Pendente</div>
                 <div id="update-success" class="alert alert-success" role="alert">Informação atualizada com sucesso!</div>
                 <div id="payment-success" class="alert alert-success" role="alert">Pagamento confirmado!</div>
-                <div class="alert alert-danger" role="alert"><strong>Erro:</strong> Algo deu errado!</div>
+                <div class="alert alert-danger" role="alert"><strong>Atenção:</strong> Inscrição cancelada por falta de pagamento!</div>
             </div>
         </div>
 
@@ -750,13 +750,18 @@
 
         function updatePaymentAlert(snapshot){
             // payment alert
-            if(snapshot != 1){
+            if(snapshot == 0){
                 $("#payment-success").hide();
+                $(".alert-danger").hide("fast");
                 $(".alert-warning").slideDown("fast");
-            }
-            else {
+            } if(snapshot == 1) {
                 $(".alert-warning").hide();
+                $(".alert-danger").hide("fast");
                 $("#payment-success").slideDown("fast");
+            } if(snapshot == 2){
+                $(".alert-warning").hide();
+                $("#payment-success").hide("fast");
+                $(".alert-danger").slideDown("fast");
             }
         }
 
