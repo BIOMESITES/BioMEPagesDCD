@@ -270,6 +270,11 @@ small { font-family: 'Lato', sans-serif; }
 	-webkit-box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+#image-event{
+	width: 70%;
+	height: auto;
+}
+
 .line,
 .double-line {
 	clear: both;
