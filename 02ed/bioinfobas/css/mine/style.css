@@ -1696,6 +1696,21 @@ body:not(.device-sm):not(.device-xs):not(.device-xxs) #primary-menu.style-2.cent
 /* ----------------------------------------------------------------
 	Top Search
 -----------------------------------------------------------------*/
+/*
+#link-1ed{
+	
+	padding: 3%;
+	margin: 1%;
+	font-family: 
+	color: #FFFFFF;
+}
+*/
+#btn-1ed{
+	width: 12em;
+	height: auto;
+	box-shadow: 3px 3px 25px #555555;
+	margin: 1% 20%;
+}
 
 
 #top-search,
