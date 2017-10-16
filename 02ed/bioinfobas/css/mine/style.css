@@ -1704,14 +1704,21 @@ body:not(.device-sm):not(.device-xs):not(.device-xxs) #primary-menu.style-2.cent
 	font-family: 
 	color: #FFFFFF;
 }
-*/
-#btn-1ed{
-	width: 12em;
-	height: auto;
-	box-shadow: 3px 3px 25px #555555;
-	margin: 1% 20%;
-}
 
+#link-past_edition{
+	font-size: 2em;
+	color: #FFFFFF;
+	position: absolute;
+	margin: -4.3em 0 0 50em; 
+	border: solid;
+	padding: 2px;
+} 
+*/
+
+#link-past_edition{
+	position: absolute;
+	margin: -42em 0 0 25%;  
+} 
 
 #top-search,
 #top-cart,
