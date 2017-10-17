@@ -6730,6 +6730,10 @@ body:not(.device-touch) .button {
 	text-transform: none;
 }
 
+.preco{
+	font-size: 40px;
+}
+
 .button i {
 	position: relative;
 	top: 1px;
