@@ -217,6 +217,26 @@ form { margin-bottom: 30px; }
 small { font-family: 'Lato', sans-serif; }
 
 
+
+
+/* ----------------------------------------------------------------
+	Mine Mine 
+-----------------------------------------------------------------*/
+.initial{ 
+	background-repeat: no-repeat; 
+	background-size: 100%;
+}
+
+.mobile-initial{ 
+	background-repeat: no-repeat; 
+	background-size: cover;
+	display: none;
+}
+
+
+
+
+
 /* ----------------------------------------------------------------
 	Helper Classes
 -----------------------------------------------------------------*/
