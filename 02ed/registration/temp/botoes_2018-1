@@ -1,0 +1,146 @@
+BIOINFO:
+
+{
+  "enrollment" : [ 
+  {
+    "price" : "180.00",
+    "productId" : "97DFF6022626E94FF45CAFB73BCBDC7D",
+    "title" : "Aluno de graduação"
+  }, {
+    "price" : "180.00",
+    "productId" : "97DFF6022626E94FF45CAFB73BCBDC7D",
+    "title" : "Aluno de pós-graduação"
+  }, {
+    "price" : "180.00",
+    "productId" : "97DFF6022626E94FF45CAFB73BCBDC7D",
+    "title" : "Pós-doutorando"
+  }, {
+    "price" : "180.00",
+    "productId" : "97DFF6022626E94FF45CAFB73BCBDC7D",
+    "title" : "Profissional"
+  } 
+ ]
+}
+
+NGS:
+
+{
+  "enrollment" : [ 
+  {
+    "price" : "300.00",
+    "productId" : "F5DAD6912E2E6A5994AC9FA651E87752",
+    "title" : "Aluno de graduação"
+  }, {
+    "price" : "300.00",
+    "productId" : "F5DAD6912E2E6A5994AC9FA651E87752",
+    "title" : "Aluno de pós-graduação"
+  }, {
+    "price" : "300.00",
+    "productId" : "F5DAD6912E2E6A5994AC9FA651E87752",
+    "title" : "Pós-doutorando"
+  }, {
+    "price" : "300.00",
+    "productId" : "F5DAD6912E2E6A5994AC9FA651E87752",
+    "title" : "Profissional"
+  } 
+ ]
+}
+
+R:
+
+{
+  "enrollment" : [ 
+  {
+    "price" : "150.00",
+    "productId" : "3320E6A617172B2554262F81BA93AA47",
+    "title" : "Aluno de graduação"
+  }, {
+    "price" : "150.00",
+    "productId" : "3320E6A617172B2554262F81BA93AA47",
+    "title" : "Aluno de pós-graduação"
+  }, {
+    "price" : "250.00",
+    "productId" : "418C94D15E5EBF111480EF8C9ACBBADB",
+    "title" : "Pós-doutorando"
+  }, {
+    "price" : "250.00",
+    "productId" : "418C94D15E5EBF111480EF8C9ACBBADB",
+    "title" : "Profissional"
+  } 
+ ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+
+<h> Rbase </h><br>
+
+<!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+<form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post">
+<!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+<input type="hidden" name="code" value="F6B9D899DCDC00B0045CEF9497DCFB75" />
+<input type="hidden" name="iot" value="button" />
+<input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-pagar-preto-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+</form>
+<!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
+
+
+<br><br>
+
+
+<h>IntroducaoNGS</h>  <br>
+<!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+<form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post">
+<!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+<input type="hidden" name="code" value="C90069361A1A5B01144E9FADD82FE993" />
+<input type="hidden" name="iot" value="button" />
+<input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-pagar-preto-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+</form>
+<!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
+
+
+<br><br>
+<h>Binfo.g</h> <br>
+<!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+<form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post">
+<!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+<input type="hidden" name="code" value="AE6FC6F11B1B918004A7EFA822FDAD66" />
+<input type="hidden" name="iot" value="button" />
+<input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-pagar-preto-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+</form>
+<!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
+
+
+<br><br>
+<h>Binfo.p</h> <br>
+<!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+<form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post">
+<!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+<input type="hidden" name="code" value="40A66F7556566BBDD4192FA796121755" />
+<input type="hidden" name="iot" value="button" />
+<input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-pagar-preto-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+</form>
+<!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
+
+
+<br><br>
+</html>
