@@ -97,9 +97,18 @@
         <div class="row info-row">
             <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
                 <div class="alert alert-warning" role="alert"><strong>Atenção:</strong> Pagamento Pendente</div>
-                <div id="update-success" class="alert alert-success" role="alert">Informação atualizada com sucesso!</div>
                 <div id="payment-success" class="alert alert-success" role="alert">Pagamento confirmado!</div>
                 <div class="alert alert-danger" role="alert"><strong>Atenção:</strong> Inscrição cancelada por falta de pagamento!</div>
+                <div id="update-success" class="alert alert-success" role="alert">
+                <center><b>Informação atualizada com sucesso!</b></center>
+                <br><br>
+                <b>LEIA AS INFORMAÇÕES ABAIXO!</b>
+                <br><br>
+                * Para obtenção do desconto de 20%, o participante deve entrar em contato e informar o código de desconto através do e-mail biome@imd.ufrn.br. Neste caso, a inscrição somente poderá ser paga através de transferência bancária para a conta corrente do Instituto de Bioinformática e Biotecnologia, cujos dados bancários serão enviados ao portador do voucher.
+                <br><br>
+                ** Participantes que receberam um voucher de 20% podem utilizá-lo para obter o desconto na inscrição de somente um dos cursos da 2a. edição dos Cursos de Curta Duração. 
+                <br><br>
+                *** Inscrições realizadas com desconto não serão contabilizadas para emissão de um novo voucher, que está condicionada ao pagamento integral do valor da inscrição de 2 ou 3 cursos da 2a. edição dos Cursos de Curta Duração. </div>
             </div>
         </div>
 
@@ -526,7 +535,7 @@
                 $("#update-success").slideUp(500, function() {
                     $(this).hide();
                 });
-            }, 2500);
+            }, 5000000000);
         }
 
         function errorAlert() {
