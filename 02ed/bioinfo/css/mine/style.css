@@ -97,7 +97,7 @@
 
 .link-registration{
 	border: solid #FF6347;
-	margin: 80px 30px 80px 30px;
+	margin: 90px 30px 80px 30px;
 	padding: 2%;
 }
 
@@ -232,15 +232,15 @@ small { font-family: 'Lato', sans-serif; }
 
 
 /* ----------------------------------------------------------------
-	Mine Mine 
+	Mine Mine
 -----------------------------------------------------------------*/
-.initial{ 
-	background-repeat: no-repeat; 
+.initial{
+	background-repeat: no-repeat;
 	background-size: 100%;
 }
 
-.mobile-initial{ 
-	background-repeat: no-repeat; 
+.mobile-initial{
+	background-repeat: no-repeat;
 	background-size: cover;
 	display: none;
 }
@@ -1730,10 +1730,10 @@ body:not(.device-sm):not(.device-xs):not(.device-xxs) #primary-menu.style-2.cent
 -----------------------------------------------------------------*/
 /*
 #link-1ed{
-	
+
 	padding: 3%;
 	margin: 1%;
-	font-family: 
+	font-family:
 	color: #FFFFFF;
 }
 
@@ -1741,16 +1741,16 @@ body:not(.device-sm):not(.device-xs):not(.device-xxs) #primary-menu.style-2.cent
 	font-size: 2em;
 	color: #FFFFFF;
 	position: absolute;
-	margin: -4.3em 0 0 50em; 
+	margin: -4.3em 0 0 50em;
 	border: solid;
 	padding: 2px;
-} 
+}
 */
 
 #link-past_edition{
 	position: absolute;
-	margin: -42em 0 0 25%;  
-} 
+	margin: -42em 0 0 25%;
+}
 
 #top-search,
 #top-cart,
